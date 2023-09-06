@@ -13,21 +13,25 @@ build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
+  entry_points:
+    - napari-micromanager = napari_micromanager.__main__:main
 
 requirements:
   host:
+    - hatch-vcs
+    - hatchling
     - pip
     - python >=3.8
-    - setuptools-scm
   run:
     - fonticon-materialdesignicons6
     - napari >=0.4.13
-    - pymmcore-plus >=0.1.5
+    - pymmcore-plus >=0.8.0
+    - pymmcore-widgets >=0.4.2
     - python >=3.8
-    - superqt >=0.3.1
+    - superqt >=0.5.1
     - tifffile
-    - useq-schema >=0.1.0
-    - fonticon-materialdesignicons6
+    - useq-schema >=0.4.1
+    - zarr
 
 test:
   imports:
@@ -35,14 +39,16 @@ test:
   commands:
     - pip list
     - pip check
+    - napari-micromanager
   requires:
     - pip
 
 about:
-  home: https://github.com/tlambert03/napari-micromanager
+  home: https://pypi.org/project/napari-micromanager
   summary: GUI interface between napari and micromanager
   license: BSD-3-Clause
   license_file: LICENSE
+  dev_url: https://github.com/tlambert03/napari-micromanager
 
 extra:
   recipe-maintainers:
