@@ -25,9 +25,11 @@ requirements:
   run:
     - fonticon-materialdesignicons6
     - napari >=0.4.13
+    - numpy
     - pymmcore-plus >=0.8.0
     - pymmcore-widgets >=0.4.2
     - python >=3.8
+    - qtpy
     - superqt >=0.5.1
     - tifffile
     - useq-schema >=0.4.1
